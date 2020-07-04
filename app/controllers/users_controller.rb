@@ -5,9 +5,6 @@ class UsersController < ApplicationController
     end
 
     def create
-        # @user = User.create(user_params)
-        # session[:user_id] = @user.id
-        # redirect_to users_new_path
         @user = User.new(user_params)
         if @user.valid?
             @user.save
@@ -16,7 +13,6 @@ class UsersController < ApplicationController
         else
             redirect_to users_new_path
         end
-        
     end
 
     def homepage
